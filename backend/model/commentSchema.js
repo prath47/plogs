@@ -1,0 +1,23 @@
+const { Schema, model } = require("mongoose")
+
+const commentSchema = new Schema({
+    comment:{
+        type:String,
+        required:true,
+    },
+    author:{
+        type:String,
+        required:true,
+    },
+    postId:{
+        type:String,
+        required:true,
+    },
+    userId:{
+        type:String,
+        required:true
+    }
+} , {timestamps:true})
+
+const commentModel = model('comments', commentSchema)
+module.exports = { commentModel }
